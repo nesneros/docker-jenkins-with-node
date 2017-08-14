@@ -22,7 +22,6 @@ RUN apk add --no-cache bash curl git make gcc g++ python linux-headers binutils-
     make -j$(getconf _NPROCESSORS_ONLN) && \
     make install && \
     cd / && \
-    apk del binutils-gold gnupg ${DEL_PKGS} && \
     rm -rf ${RM_DIRS} /node-${NODE_VERSION}* /usr/share/man /tmp/* /var/cache/apk/* \
        /root/.npm /root/.node-gyp /root/.gnupg /usr/lib/node_modules/npm/man \
        /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts
